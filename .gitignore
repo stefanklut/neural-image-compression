@@ -106,3 +106,9 @@ venv.bak/
 # data folders
 mnist/
 fashion-mnist/
+
+# pickle files
+*.pkl
+
+# saved models
+*.pt
