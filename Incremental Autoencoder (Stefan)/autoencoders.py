@@ -115,18 +115,18 @@ class LargeAutoEncoder(nn.Module):
         super(LargeAutoEncoder, self).__init__()
 
         self.encoder = nn.Sequential(
-            nn.Linear(105*105, 105*10),
+            nn.Linear(105*105, 4096),
             nn.Tanh(),
-            nn.Linear(105*10, 105*105),
-#             nn.Tanh(),
-#             nn.Linear(512, 512),
+            nn.Linear(4096, 2048),
+            nn.Tanh(),
+            nn.Linear(2048, 2048),
         )
         self.decoder = nn.Sequential(
-#             nn.Linear(512, 512),
-#             nn.Tanh(),
-            nn.Linear(105*105, 105*10*5),
+            nn.Linear(2048, 2048),
             nn.Tanh(),
-            nn.Linear(105*10*5, 105*105),
+            nn.Linear(2048, 4096),
+            nn.Tanh(),
+            nn.Linear(4096, 105*105),
             nn.Sigmoid(),       # compress to a range (0, 1)
         )
 
