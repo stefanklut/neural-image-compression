@@ -106,6 +106,7 @@ venv.bak/
 # data folders
 mnist/
 fashion-mnist/
+omniglot/
 
 # pickle files
 *.pkl
