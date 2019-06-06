@@ -107,6 +107,7 @@ venv.bak/
 Datasets/
 fashion-mnist/
 mnist/
+Images/
 
 # pickle files
 *.pkl
